@@ -10,7 +10,10 @@
     changed_when: False
   
   tasks:
+   - include: tasks/user.yml
+   - include: tasks/cron.yml
    - include: tasks/packages.yml
+   
     
 
 ...
