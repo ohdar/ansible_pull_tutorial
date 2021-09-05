@@ -9,6 +9,10 @@
       update_cache: yes
     changed_when: False
   
+  # Load distro-specific variables
+- include_vars: "{{ ansible_distribution }}.yml"
+  tags: always
+  
   tasks:
    - include: tasks/user.yml
    - include: tasks/cron.yml
