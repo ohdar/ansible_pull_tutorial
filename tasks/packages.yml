@@ -1,4 +1,3 @@
----
 - name: install packages
   apt:
     name: 
@@ -6,5 +5,3 @@
      - mc
      - tmux
   status: absent
-
-...
