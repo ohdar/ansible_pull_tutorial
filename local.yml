@@ -10,9 +10,10 @@
     changed_when: False
   
   # Load distro-specific variables
-  - include_vars:
+  - name: Include vars of ubuntu.yml into the 'stuff'
+    include_vars:
       file: vars/Ubuntu.yml
-      tags: always
+      name: stuff
   
   tasks:
    - include: tasks/user.yml
