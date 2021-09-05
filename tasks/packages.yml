@@ -5,6 +5,7 @@
      - mc
      - tmux
      - vim-nox
+     - xz-utils
 
 - name: software | terraform | install binary
   unarchive:
