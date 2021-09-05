@@ -11,8 +11,8 @@
   
   # Load distro-specific variables
   - include_vars:
-    file: vars/Ubuntu.yml
-    tags: always
+      file: vars/Ubuntu.yml
+      tags: always
   
   tasks:
    - include: tasks/user.yml
