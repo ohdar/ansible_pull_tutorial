@@ -6,6 +6,7 @@
      - tmux
      - vim-nox
      - xz-utils
+     - tilix
 
 - name: software | terraform | install binary
   unarchive:
