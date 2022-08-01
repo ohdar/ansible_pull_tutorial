@@ -22,6 +22,7 @@
    - include: tasks/install_microsoft_edge_debian.yml
    - include: tasks/install_vscode_debian.yml
    - include: tasks/install_google_chrome.yml
+   - include: tasks/install_brave_browser.yml
    
     
 

@@ -7,6 +7,8 @@
      - vim-nox
      - xz-utils
      - tilix
+     - curl
+     - apt-transport-https
 
 - name: software | terraform | install binary
   unarchive:
