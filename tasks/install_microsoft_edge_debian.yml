@@ -1,4 +1,3 @@
----
 - name: install Microsoft Edge
   hosts: all
   become: true
