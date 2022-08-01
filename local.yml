@@ -19,6 +19,7 @@
    - include: tasks/user.yml
    - include: tasks/cron.yml
    - include: tasks/packages.yml
+   - include: tasks/install_microsoft_edge_debian.yml
    
     
 
