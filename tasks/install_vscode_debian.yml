@@ -17,6 +17,6 @@
   
 - name: "Install visual studio code"
   ansible.builtin.apt: 
-    name: microsoft-visual-studio-code-stable
+    name: code
     state: latest
     update_cache: true
