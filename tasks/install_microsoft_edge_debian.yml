@@ -11,9 +11,9 @@
   
 - name: "Add repository into sources list"
   ansible.builtin.apt_repository: 
-    filename: microsoft-edge
     repo: "deb [arch=amd64] https://packages.microsoft.com/repos/edge stable main"
     state: present
+    filename: microsoft-edge-beta
   
 - name: "Install microsoft-edge-stable"
   ansible.builtin.apt: 
