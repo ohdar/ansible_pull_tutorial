@@ -6,14 +6,15 @@
   
 - name: "Add apt signing key"
   ansible.builtin.apt_key: 
-    state: present
     url: "https://packages.microsoft.com/keys/microsoft.asc"
+    state: present
   
 - name: "Add repository into sources list"
   ansible.builtin.apt_repository: 
     repo: "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft.gpg] https://packages.microsoft.com/repos/edge stable main"
     state: present
     filename: microsoft-edge-beta
+    update_cache: true
   
 - name: "Install microsoft-edge-stable"
   ansible.builtin.apt: 
