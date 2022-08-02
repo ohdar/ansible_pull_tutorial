@@ -16,13 +16,13 @@
       name: stuff
   
   tasks:
-   - include: tasks/user.yml
-   - include: tasks/cron.yml
-   - include: tasks/packages.yml
-   - include: tasks/install_microsoft_edge_debian.yml
-   - include: tasks/install_vscode_debian.yml
-   - include: tasks/install_google_chrome.yml
-   - include: tasks/install_brave_browser.yml
+   - include_tasks: tasks/user.yml
+   - include_tasks: tasks/cron.yml
+   - include_tasks: tasks/packages.yml
+   - include_tasks: tasks/install_microsoft_edge_debian.yml
+   - include_tasks: tasks/install_vscode_debian.yml
+   - include_tasks: tasks/install_google_chrome.yml
+   - include_tasks: tasks/install_brave_browser.yml
    
     
 
