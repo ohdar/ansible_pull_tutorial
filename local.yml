@@ -23,6 +23,7 @@
    - include_tasks: tasks/install_vscode_debian.yml
    - include_tasks: tasks/install_google_chrome.yml
    - include_tasks: tasks/install_brave_browser.yml
+   - include_tasks: tasks/install_vivaldi_browser.yml
    
     
 

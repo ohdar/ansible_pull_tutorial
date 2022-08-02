@@ -1,0 +1,29 @@
+- name: Run apt upgrade
+  apt:
+    upgrade: "yes"
+    update_cache: yes
+    cache_valid_time: 432000
+
+- name: Add key
+  apt_key:
+    url: https://repo.vivaldi.com/archive/linux_signing_key.pub
+    state: present
+  tags:
+     - vivaldi
+
+- name: Add Vivaldi Repository
+  apt_repository:
+      repo: "deb https://repo.vivaldi.com/stable/deb/ stable main"
+      state: present
+      filename: vivaldi.list
+      update_cache: true
+  tags:
+     - vivaldi
+
+- name: Install Vivaldi
+  apt:
+      name: vivaldi-stable
+      update_cache: yes
+      state: latest
+  tags:
+     - vivaldi
