@@ -46,14 +46,11 @@ if [ $choice = y -o $choice = Y ]; then
 
         echo "Installing Microsoft VSCode Editor....."
         # Visual Studio Code on Ubuntu Linux
-        sudo apt-get install wget gpg
-        wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
-        sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings
-        sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
-        rm -f packages.microsoft.gpg
-        sudo apt install apt-transport-https
         sudo apt update
-        sudo apt install code # or code-insiders
+        sudo apt install software-properties-common apt-transport-https wget -y
+        wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+        sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+        sudo apt install code        
 
         echo "Installing Vivaldi Browser....."
         sudo apt install wget
@@ -66,14 +63,16 @@ if [ $choice = y -o $choice = Y ]; then
 else
         echo "Thanks for your choice";
         # sudo apt remove microsoft-edge-stable
-        sudo apt purge microsoft-edge-stable
-        sudo apt-get purge google-chrome-stable
+        sudo apt purge microsoft-edge-stable -y
+        sudo apt-get purge google-chrome-stable -y
         sudo apt -y remove brave-browser && sudo apt -y purge brave-browser && rm -rf ~/.config/BraveSoftware && rm -rf ~/.cache/BraveSoftware
         sudo apt purge code && rm -fr ~/.vscode
-        sudo apt-get purge-vivaldi-stable
+        sudo apt-get purge-vivaldi-stable -y
 
 fi
 
+sudo apt autoremove
+sudo apt autoclean
 
 # ------------------------------- #
 # END #
