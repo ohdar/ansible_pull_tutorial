@@ -17,7 +17,7 @@ echo "5. Vivaldi Browser"
 echo -e "Do you want to perform this operation[y/n]: \c"
 read -r choice
 
-if [ $choice = y -o $choice =Y ]; then 
+if [ $choice = y -o $choice = Y ]; then 
 
         echo "Installing Brave Browser....."
         #Installing Brave on Debian Based Linux
